@@ -376,6 +376,20 @@ iconfont{
 }
 
 
+.luobo-neikuan-zhong li.active{
+	z-index: 1;
+	opacity: 1;
+}
+
+.luobo-neir .xiaoyuandain li.active{
+	background: url(../img/tupianjingling.png) 0 -100px;
+}
+
+
+
+
+
+
 .luobo-neikuan-right-zhong ul li:hover p{
 	color: #ff6700;
 }
@@ -418,11 +432,50 @@ iconfont{
 i{
 	font-family: iconfont;
 }
-.luobo-neikuan-zhong{
+.luobo-neir{
 	width: 830px;
 	height: 100%;
 	float: left;
 	position: relative;
+}
+.luobo-neir .xiaoyuandain{
+	display: flex;
+	justify-content: space-between;
+    opacity: .8;
+    padding: 0 8px 0 0;
+    width: 244px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 20px;
+    z-index: 999;
+}
+.luobo-neir .xiaoyuandain li{
+	display: block;
+	/*background: red;*/
+	margin-left: 8px;
+    width: 20px;
+    height: 20px;
+    background: url(../img/tupianjingling.png) -26px -100px;
+    color: #FFF;
+    cursor: pointer;
+}
+.luobo-neir .xiaoyuandain li.active{
+	background: url(../img/tupianjingling.png) 0 -100px;
+}
+
+
+
+
+
+
+.luobo-neikuan-zhong{
+	width: 830px;
+	height: 100%;
+	float: left;
 }
 .luobo-neikuan-zhong li{
 	width: 100%;
@@ -430,6 +483,8 @@ i{
 	position: absolute;
 	left: 0;
 	top: 0;
+	opacity: 0;
+	transition: all 1s;
 }
 .luobo-zhong-tu{
 	width: 100%;
@@ -483,6 +538,7 @@ i{
 	position: absolute;
 	top: 5px;
 	right: 5px;
+	z-index: 999;
 }
 .tanchuang-top:hover{
 	background: rgba(255, 255, 255, 0.7);
@@ -495,6 +551,7 @@ i{
 	position: absolute;
 	bottom: 5px;
 	right: 5px;
+	z-index: 999;
 }
 .tanchuang-bottom:hover{
 	background: rgba(255, 255, 255, 0.7);
