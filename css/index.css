@@ -728,6 +728,7 @@ i{
 	width: 1190px;
 	margin:0 auto;
 	margin-top: 20px;
+	overflow: hidden;
 }
 
 .tuijianchangtiao{
@@ -786,7 +787,54 @@ i{
 	width: 999px;
 	height: 100%;
 	float: left;
+	overflow: hidden;
+	position: relative;
+	transition: all 1s;
 }
+
+.txhz{
+	width:3000px;
+	transition: all 1s;
+}
+
+.zc-left{
+	width:32px;
+	height: 55px;
+	background:#999999;
+	position:absolute;
+	top:34%;
+	left:0;
+	font-size: 40px;
+	color: #6B6D6D;
+	line-height: 55px;
+	text-align: center;
+	cursor: pointer;
+	display: none;
+}
+
+.zc-right{
+	width:32px;
+	height: 55px;
+	background:#999999;
+	position:absolute;
+	top:34%;
+	right: 0;
+	font-size: 40px;
+	color: #6B6D6D;
+	line-height: 55px;
+	text-align: center;
+	display: none;
+	cursor: pointer;
+}
+
+.xiamian-left:hover .zc-left{
+	display: block;
+}
+
+.xiamian-left:hover .zc-right{
+	display: block;
+}
+
 
 .xiamian-right{
 	display: block;
@@ -1562,12 +1610,16 @@ i{
 }
 
 .haohuo3{
-	float: left;
+	  float: left;
     width: 390px;
     height: 427px;
     margin-left: 10px;
     background: #FFF;
+    overflow: hidden;
 }
+
+
+
 .haohuo1 .title{
 	position: relative;
     width: 100%;
@@ -1751,6 +1803,7 @@ i{
     height: 360px;
     overflow: hidden;
     margin: 10px 0 0 0;
+
 }
 .haohuo3 .content .list .list1{
 	position: absolute;
@@ -1758,6 +1811,7 @@ i{
     top: 0;
     height: 360px;
     width: 1200px;
+    transition: all 1s;
 }
 .haohuo3 .content .list2{
 	float: left;
@@ -1879,16 +1933,17 @@ i{
     text-align: center;
     font-size: 0;
 }
-.haohuo3 .yuan a{
-	position: relative;
+.haohuo3 .yuan div{
+	  position: relative;
     display: inline-block;
     margin-left: 10px;
     background: #d8d8d8;
     width: 8px;
     height: 8px;
     border-radius: 100%;
+    
 }
-.haohuo3 .yuan a:first-child{
+.haohuo3 .content .yuan .active{
 	background: #c72c2c;
 }
 
