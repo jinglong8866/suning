@@ -140,5 +140,99 @@
 			})	
 }
 
+//搜索顶部
+//{
+		let topbar=document.querySelector(".topbar");
+//		console.log(topbar);
+//		window.onscroll=function(){
+//			console.log(document.documentElement.scrollTop);
+//			let st=document.documentElement.scrollTop;
+//			if (st>2180){
+//				topbar.style.display="block";
+//			}else{
+//				topbar.style.display="none";
+//			}
+//			
+//			
+//			if(st>1000){
+//				nav.style.display="block";
+//			}else{
+//				nav.style.display="none";
+//			}
+//		}
+//}
 
 
+
+{
+	let floors = document.querySelectorAll(".shumaqiche")
+	let topbar=document.querySelector(".topbar");
+	console.log(floors);
+	let nav = document.querySelector("aside")
+	console.log(nav);
+	let navs = document.querySelectorAll(".aside-nr li")
+	console.log(navs);
+	let toptop = document.querySelector(".aside-di-1")
+	let flag = true;
+	window.onscroll = function() {
+		if(flag) {
+			let st = document.documentElement.scrollTop;
+			if(st>1000){
+				topbar.style.display="block";
+			}else{
+				topbar.style.display="none";
+			}
+			if(st > 2180) {
+				nav.style.display = "block"
+			} else {
+				nav.style.display = "none"
+			}
+			floors.forEach(function(ele, index) {
+				if(st < floors[0].offsetTop) {
+					for(let i = 0; i < navs.length; i++) {
+						navs[i].classList.remove("active")
+					}
+					navs[0].classList.add("active")
+				}
+				if(st >= ele.offsetTop) {
+					for(let i = 0; i < navs.length; i++) {
+						navs[i].classList.remove("active")
+					}
+					navs[index + 1].classList.add("active")
+				}
+			})
+		}
+	}
+	navs.forEach(function(ele, index) {
+		ele.onclick = function() {
+			flag = false;
+			let st = floors[index].offsetTop;
+			st-=70
+			let now = document.documentElement.scrollTop;
+			let speed = (st - now) * 30 / 300;
+			let time = 0;
+			let t = setInterval(function() {
+				now += speed;
+				time += 30;
+				if(time === 300) {
+					clearInterval(t);
+					now = st;
+					flag=true;
+				}
+				document.documentElement.scrollTop = now;
+			}, 30)
+		}
+	})
+	toptop.onclick = function() {
+		let st = document.documentElement.scrollTop
+		let speed = st * 30 / 500
+		let t = setInterval(function() {
+			st -= speed
+			if(st <= 0) {
+				st = 0;
+				clearInterval(t)
+			}
+			document.documentElement.scrollTop = st
+		}, 30)
+	}
+}
